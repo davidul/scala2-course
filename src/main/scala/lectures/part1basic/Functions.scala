@@ -12,4 +12,21 @@ object Functions extends App{
   println(parameterLessFunction())
   println(parameterLessFunction)
 
+  //recursive function
+  def repeatedFunction(aString: String, n : Int) : String = {
+    if (n == 1) aString
+    else
+      aString + repeatedFunction(aString, n - 1)
+  }
+
+  println(repeatedFunction("H",3))
+
+  //Side effect, println is expression returns Unit
+  def aFunctionWithSideEffects(aString: String): Unit = println(aString)
+
+  def aBigFunction(n: Int): Int = {
+    def aSmallerFunction(a: Int, b: Int): Int = a + b
+
+    aSmallerFunction(n,n-1)
+  }
 }
