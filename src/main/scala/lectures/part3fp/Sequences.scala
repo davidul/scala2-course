@@ -40,4 +40,5 @@ object Sequences extends App {
   //Vector
   val aVector: Vector[Int] = Vector(1,2,3)
   println(aVector)
+
 }

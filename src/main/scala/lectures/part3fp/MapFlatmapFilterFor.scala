@@ -1,5 +1,8 @@
 package lectures.part3fp
 
+case class Account(mgmtId: Long, s1AccountId: String, scalyrClusterName: String){
+  def keyByAccount: (String, String) = s"${mgmtId}_${s1AccountId}" -> scalyrClusterName
+}
 object MapFlatmapFilterFor extends App {
 
   val list = List(1,2,3)
@@ -21,6 +24,8 @@ object MapFlatmapFilterFor extends App {
   //print all combinations of two lists
   val numbers = List(1,2,3,4)
   val chars = List('a', 'b', 'c', 'd')
+
+  numbers.flatMap(f => numbers.map(x => x + 1)).foreach(f => println(f))
 
   val value = numbers
     .flatMap(n =>

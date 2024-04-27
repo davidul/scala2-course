@@ -37,6 +37,8 @@ A companion object is an object with the same name as
 a class or trait 
 and is defined in the same source file as the class.
 
+It is used to model static methods.
+
 ```scala
 
 
@@ -70,6 +72,27 @@ and then evaluates the arguments if need be.
     exec(time())
 ```
 
+## Default arguments
+Default arguments are used when a function is called without passing all the arguments.
+
+```scala
+    def log(message: String, level: String = "INFO") = println(s"$level: $message")
+    log("System starting") // INFO: System starting
+    log("User not found", "WARNING") // WARNING: User not found
+```
+
+## For loop
+
+```scala
+val a = Array(1,2,3,4)
+  val b = Array(5,6,7,8)
+
+  for {
+    x <- a
+    y <- b
+  } println(x + " " + y)
+ ```
+
 ## Case class
 Case classes are like regular classes with a few key differences which we will go over.
     
@@ -89,3 +112,23 @@ Features of case classes:
 - The parameters are public val by default
 - The parameters are immutable by default
 
+## Collections
+Mutable and immutable collections are available in Scala.
+- Iterable
+  - Seq
+  - Set
+  - Map
+
+- Seq
+  - IndexedSeq
+    - Vector
+    - Range
+    - String
+    - NumericRange
+    - ArraySeq
+  - LinearSeq
+    - List
+    - LazyList
+    - Queue
+
+LinearSeq is a linked list and IndexedSeq is an array. There is a difference in performance between the two.

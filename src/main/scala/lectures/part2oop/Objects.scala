@@ -34,4 +34,18 @@ object Objects extends App {
 
   //Scala applications = Scala object
   // def main(args: Array[String]): Unit
+
+  object IdFactory {
+    private var counter = 0
+
+    def create(): Int = {
+      counter += 1
+      counter
+    }
+  }
+
+  val newId: Int = IdFactory.create()
+  println(s"IdFactory.newId $newId") // 1
+  val newerId: Int = IdFactory.create()
+  println(s"IdFactory.newId $newerId") // 2
 }

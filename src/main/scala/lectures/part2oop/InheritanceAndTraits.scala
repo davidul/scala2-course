@@ -2,7 +2,8 @@ package lectures.part2oop
 
 object InheritanceAndTraits extends App {
 
-  class Animal {
+  //sealed class - only extend in this file
+  sealed class Animal {
     val creatureType = "wild"
     def eat = println("nom")
     private def p= println("not inherited")
